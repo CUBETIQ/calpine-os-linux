@@ -4,8 +4,6 @@
 # MIT
 #
 
-echo "Post-installation..."
-
 # Catch errors
 set -ex
 
