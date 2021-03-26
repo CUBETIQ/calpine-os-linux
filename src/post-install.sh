@@ -17,4 +17,4 @@ update-ca-certificates
 /sbin/apk upgrade
 
 # Add a standard user.
-adduser -D -u1000 worker
+adduser -D -u1000 cubetiq
