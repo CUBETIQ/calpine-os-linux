@@ -42,6 +42,7 @@ sudo ${MKROOTFS} --mirror-uri http://dl-2.alpinelinux.org/alpine \
 # Create Dockerfile
 cat <<DOCKERFILE > "${DOCKER_ROOT}/Dockerfile"
 FROM scratch
+LABEL maintainer="sombochea@cubetiqs.com"
 USER cubetiq
 ADD $(basename $BUILD_TAR) /
 CMD ["/bin/sh"]
