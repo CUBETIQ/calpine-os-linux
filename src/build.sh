@@ -19,9 +19,9 @@ DOCKER_ROOT=$(dirname $BUILD_TAR)
 PRE_INSTALL="./src/pre-install.sh"
 POST_INSTALL="./src/post-install.sh"
 
-mkdir $DOCKER_ROOT
-MS_ROOT="${DOCKER_ROOT}/../microscanner"
-mkdir $MS_ROOT
+mkdir -p $DOCKER_ROOT
+MS_ROOT="${DOCKER_ROOT}/microscanner"
+mkdir -p $MS_ROOT
 
 # Load pre-install
 $PRE_INSTALL
