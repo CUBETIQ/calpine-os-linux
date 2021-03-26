@@ -16,8 +16,8 @@ PACKAGES="apk-tools ca-certificates ssl_client"
 MKROOTFS="/tmp/alpine-make-rootfs"
 BUILD_TAR="/tmp/docker/alpine-rootfs-${ALPINE_VERSION}.tar.gz"
 DOCKER_ROOT=$(dirname $BUILD_TAR)
-PRE_INSTALL="./pre-install.sh"
-POST_INSTALL="./post-install.sh"
+PRE_INSTALL="./src/pre-install.sh"
+POST_INSTALL="./src/post-install.sh"
 
 mkdir $DOCKER_ROOT
 MS_ROOT="${DOCKER_ROOT}/../microscanner"
