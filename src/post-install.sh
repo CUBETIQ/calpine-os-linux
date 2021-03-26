@@ -14,5 +14,11 @@ update-ca-certificates
 /sbin/apk update
 /sbin/apk upgrade
 
-# Add a standard user.
-adduser -D -u1000 cubetiq
+# Allow run sudo
+/sbin/apk add sudo
+
+# Add wheel group
+echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel 
+
+# Add an administrator user.
+adduser -D -u1000 cubetiq wheel
