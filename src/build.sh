@@ -10,7 +10,7 @@ set -ex
 # Default args
 DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:-calpine-os-linux}
 DOCKER_USERNAME="${DOCKER_USERNAME:-cubetiq}"
-ALPINE_VERSION="${ALPINE_VERSION:-3.13.3}"
+ALPINE_VERSION="${ALPINE_VERSION:-3.13}"
 PACKAGES="apk-tools ca-certificates ssl_client"
 
 MKROOTFS="/tmp/alpine-make-rootfs"
