@@ -5,4 +5,6 @@ build:
 	./src/build.sh
 	@echo "Size of the image: ${DOCKER_IMAGE_SIZE}"
 
+	$(shell docker push ${DOCKER_IMAGE_NAME})
+
 .PHONY: build
