@@ -20,11 +20,15 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_SECRET }}
       -
+        name: Checkout
+        uses: actions/checkout@v2
+        
+      -
         name: Build from Makefile
         run: |
-          echo "Start building the image"
           pwd
           ls
+          make build
       -
         name: Docker Push
         uses: docker/build-push-action@v2
