@@ -21,9 +21,11 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_SECRET }}
       -
         name: Build from Makefile
-        run: |
-          echo "Start building the image"
-          make build
+        uses: actions/checkout@v2
+        with:
+          run: |
+            echo "Start building the image"
+            make build
       -
         name: Docker Push
         uses: docker/build-push-action@v2
