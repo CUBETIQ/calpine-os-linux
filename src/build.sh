@@ -60,4 +60,5 @@ RUN wget https://get.aquasec.com/microscanner -O /home/cubetiq/microscanner \
   && echo "8e01415d364a4173c9917832c2e64485d93ac712a18611ed5099b75b6f44e3a5  /home/cubetiq/microscanner" | sha256sum -c - \
   && chmod +x /home/cubetiq/microscanner \
   && /home/cubetiq/microscanner $MS_TOKEN
+  && rm -r /home/cubetiq/microscanner
 DOCKERFILE
