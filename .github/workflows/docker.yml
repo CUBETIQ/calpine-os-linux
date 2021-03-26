@@ -26,14 +26,14 @@ jobs:
       -
         name: Build from Makefile
         run: |
-          pwd
-          ls
           make build
+          docker images
       -
         name: Docker Push
         uses: docker/build-push-action@v2
         with:
           push: true
+          tags: cubetiq/calpine-os-linux:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
