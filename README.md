@@ -11,7 +11,13 @@
 make build
 ```
 
-# Running container
+# [Docker Hub](https://hub.docker.com/r/cubetiq/calpine-os-linux)
+### Pull image
+```shell
+docker pull cubetiq/calpine-os-linux:latest
+```
+
+### Running container
 ```shell
 docker run --rm -it cubetiq/calpine-os-linux /bin/sh
 ```
