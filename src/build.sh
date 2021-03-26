@@ -14,7 +14,7 @@ ALPINE_VERSION="${ALPINE_VERSION:-3.13.3}"
 PACKAGES="apk-tools ca-certificates ssl_client"
 
 MKROOTFS="/tmp/alpine-make-rootfs"
-BUILD_TAR="/tmp/docker/alpine-rootfs-${ALPINE_VERSION}.tar.gz"
+BUILD_TAR="/tmp/calpine-os-linux-build/alpine-rootfs-${ALPINE_VERSION}.tar.gz"
 DOCKER_ROOT=$(dirname $BUILD_TAR)
 PRE_INSTALL="./src/pre-install.sh"
 POST_INSTALL="./src/post-install.sh"
