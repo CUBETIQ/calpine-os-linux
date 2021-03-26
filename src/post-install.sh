@@ -23,4 +23,4 @@ echo '%wheel ALL=NOPASSWD: ALL' > /etc/sudoers.d/wheel
 cat /etc/sudoers.d/wheel
 
 # Add an administrator user.
-adduser cubetiq wheel
+adduser -D -u1000 cubetiq -G wheel

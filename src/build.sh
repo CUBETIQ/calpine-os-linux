@@ -20,8 +20,8 @@ PRE_INSTALL="./src/pre-install.sh"
 POST_INSTALL="./src/post-install.sh"
 
 mkdir -p $DOCKER_ROOT
-MS_ROOT="${DOCKER_ROOT}/microscanner"
-mkdir -p $MS_ROOT
+# MS_ROOT="${DOCKER_ROOT}/microscanner"
+# mkdir -p $MS_ROOT
 
 # Load pre-install
 $PRE_INSTALL
