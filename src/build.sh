@@ -20,16 +20,14 @@ PRE_INSTALL="./src/pre-install.sh"
 POST_INSTALL="./src/post-install.sh"
 
 mkdir -p $DOCKER_ROOT
-MS_ROOT="${DOCKER_ROOT}/microscanner"
-mkdir -p $MS_ROOT
 
 # Load pre-install
 $PRE_INSTALL
 
 # Build from alpine rootfs
 # Download rootfs builder and verify it.
-wget https://raw.githubusercontent.com/alpinelinux/alpine-make-rootfs/v0.5.1/alpine-make-rootfs -O "$MKROOTFS"
-echo "a7159f17b01ad5a06419b83ea3ca9bbe7d3f8c03 $MKROOTFS" | sha1sum -c -
+wget https://raw.githubusercontent.com/alpinelinux/alpine-make-rootfs/v0.6.0/alpine-make-rootfs -O "$MKROOTFS"
+echo "c9cfea712709df162f4dcf26e2b1422aadabad43 $MKROOTFS" | sha1sum -c -
 chmod +x ${MKROOTFS}
 
 sudo ${MKROOTFS} --mirror-uri http://dl-2.alpinelinux.org/alpine \
@@ -56,12 +54,5 @@ cd -
 docker build --build-arg BASE_IMAGE="${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:${ALPINE_VERSION}" --build-arg MS_TOKEN="${MS_TOKEN}" - <<'DOCKERFILE'
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
-ARG MS_TOKEN
-
-# RUN wget https://get.aquasec.com/microscanner -O /home/cubetiq/microscanner \
-#   && echo "8e01415d364a4173c9917832c2e64485d93ac712a18611ed5099b75b6f44e3a5  /home/cubetiq/microscanner" | sha256sum -c - \
-#   && chmod +x /home/cubetiq/microscanner \
-#   && /home/cubetiq/microscanner $MS_TOKEN \
-#   && rm -r /home/cubetiq/microscanner
 
 DOCKERFILE
