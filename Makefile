@@ -1,6 +1,6 @@
 DOCKER_IMAGE_NAME = cubetiq/calpine-os-linux
 DOCKER_IMAGE_SIZE = $(shell docker images --format "{{.Repository}} {{.Size}}" | grep $(DOCKER_IMAGE_NAME) | cut -d\   -f2)
-DOCKER_IMAGE=${DOCKER_IMAGE_NAME}:3.13
+DOCKER_IMAGE=${DOCKER_IMAGE_NAME}:3.15
 
 build:
 	./src/build.sh
