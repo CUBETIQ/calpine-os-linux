@@ -1,4 +1,4 @@
-# CUBETIQ Alpine OS Linux
+# CUBETIQ Alpine OS Linux 3.13
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cubetiq/calpine-os-linux)
 ![Docker Pulls](https://img.shields.io/docker/pulls/cubetiq/calpine-os-linux)
 
@@ -14,7 +14,7 @@ make build
 # [Docker Hub](https://hub.docker.com/r/cubetiq/calpine-os-linux)
 ### Pull image
 ```shell
-docker pull cubetiq/calpine-os-linux:latest
+docker pull cubetiq/calpine-os-linux:3.13
 ```
 
 ### Running container
