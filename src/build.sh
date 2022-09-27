@@ -28,7 +28,7 @@ $PRE_INSTALL
 # Build from alpine rootfs
 # Download rootfs builder and verify it.
 wget https://raw.githubusercontent.com/alpinelinux/alpine-make-rootfs/v${ALPINE_MAKE_ROOTFS_VERSION}/alpine-make-rootfs -O "$MKROOTFS"
-echo "c9cfea712709df162f4dcf26e2b1422aadabad43 $MKROOTFS" | sha1sum -c -
+echo "73948b9ee3580d6d9dc277ec2d9449d941e32818 $MKROOTFS" | sha1sum -c -
 chmod +x ${MKROOTFS}
 
 sudo ${MKROOTFS} --mirror-uri http://dl-2.alpinelinux.org/alpine \
