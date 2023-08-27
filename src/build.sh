@@ -10,8 +10,8 @@ set -ex
 # Default args
 DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:-calpine-os-linux}
 DOCKER_USERNAME="${DOCKER_USERNAME:-cubetiq}"
-ALPINE_VERSION="${ALPINE_VERSION:-3.16}"
-ALPINE_MAKE_ROOTFS_VERSION="${ALPINE_MAKE_ROOTFS_VERSION:-0.6.1}"
+ALPINE_VERSION="${ALPINE_VERSION:-3.18.3}"
+ALPINE_MAKE_ROOTFS_VERSION="${ALPINE_MAKE_ROOTFS_VERSION:-0.7.0}"
 PACKAGES="apk-tools ca-certificates ssl_client"
 
 MKROOTFS="/tmp/alpine-make-rootfs"
@@ -28,7 +28,7 @@ $PRE_INSTALL
 # Build from alpine rootfs
 # Download rootfs builder and verify it.
 wget https://raw.githubusercontent.com/alpinelinux/alpine-make-rootfs/v${ALPINE_MAKE_ROOTFS_VERSION}/alpine-make-rootfs -O "$MKROOTFS"
-echo "73948b9ee3580d6d9dc277ec2d9449d941e32818 $MKROOTFS" | sha1sum -c -
+echo "e09b623054d06ea389f3a901fd85e64aa154ab3a $MKROOTFS" | sha1sum -c -
 chmod +x ${MKROOTFS}
 
 sudo ${MKROOTFS} --mirror-uri http://dl-2.alpinelinux.org/alpine \
